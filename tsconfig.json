@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
+    "target": "es2016",
     "module": "commonjs",
-    "allowJs": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "outDir": "build",
-    "strictNullChecks": true,
-    "sourceMap": true,
-    "target": "es6"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+  }
 }

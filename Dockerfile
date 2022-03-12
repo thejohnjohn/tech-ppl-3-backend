@@ -1,14 +1,13 @@
-FROM node:8-alpine
-COPY . /app
+FROM node:alpine
+ENV HOST=0.0.0.0
+ENV PORT=3000
+RUN apk update
 WORKDIR /app
-ENV NODE_ENV=production
-
-# install devDependencies to be able to compile the typescript files
-# will result in a bigger image but whatever..
-RUN yarn install --production=false
-
-# compile typescript files to build folder
-RUN yarn build
-
-# run the app
-ENTRYPOINT ["yarn", "serve"]
+COPY package*.json ./
+COPY tsconfig.json ./
+COPY src /app/src
+RUN ls -a
+EXPOSE 3000
+RUN npm install
+RUN npm run build
+CMD [ "npm", "start" ]
