@@ -23,7 +23,7 @@ create table client(
 );
 
 create table project(
-    id int unsigned not null PRIMARY KEY auto_increment,,
+    id int unsigned not null PRIMARY KEY auto_increment,
     projectName varchar(40) not null,
     projectOwner int unsigned not null,
     techHoursQuantity varchar(40) not null,
