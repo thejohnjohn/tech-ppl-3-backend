@@ -1,7 +1,17 @@
 import { Sequelize, Options } from "sequelize";
 import config from "../env/env";
 
-const options: Options = { benchmark: true, logging: console.log }
+const options: Options = { 
+  benchmark: true, 
+  logging: console.log,
+  define:{
+    defaultScope:{
+      attributes: {
+        exclude: ['createdAt', 'updatedAt']
+      }
+    }
+  }   
+}
 
 export const sequelize: Sequelize 
     = new Sequelize(config.database.DATABASE_CONNECTION_STRING, options);
