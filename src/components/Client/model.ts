@@ -12,7 +12,7 @@ export class Client extends Model{
 
 Client.init(
     {
-      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+      client_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       clientName: { type: DataTypes.STRING },
       phone: { type: DataTypes.STRING },
       email: { type: DataTypes.TEXT },
